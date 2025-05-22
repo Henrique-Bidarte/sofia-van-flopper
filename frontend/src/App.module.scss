@@ -1,0 +1,26 @@
+@import "ui/styles/constants";
+@import "ui/styles/colors";
+
+.App {
+  height: $page_height;
+  width: $page_width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  color: $black;
+
+  .appContainer {
+    height: $app_container_height;
+    width: $app_container_width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@font-face {
+  font-family: "DePixelBreit";
+  src: local("DePixelBreit"),
+    url(ui/assets/fonts/DePixelBreit.ttf) format("truetype");
+}

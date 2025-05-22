@@ -1,0 +1,60 @@
+@import "ui/styles/colors";
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: homeTransition 300ms linear;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  border-radius: 10px;
+  background-image:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%),
+    url('../../assets/images/sofia-van-flopper-menu.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  .connectButton {
+    height: 70px;
+    width: 900px;
+    margin-top: 720px;
+    font-size: 22px;
+    background: radial-gradient(
+      circle at center,
+      rgba($black, 0.92) 0%,
+      rgba($black, 0.6) 50%,
+      rgba($black, 0.2) 80%,
+      rgba($black, 0) 100%
+    );    color: $white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 120ms ease-in-out;
+    &:hover {
+      cursor: pointer;
+      font-weight: 650;
+  }  
+  &:disabled {
+    cursor: default;
+    opacity: 0.6;
+    transform: translateY(-1px);
+
+  }
+}
+}
+
+@keyframes homeTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
