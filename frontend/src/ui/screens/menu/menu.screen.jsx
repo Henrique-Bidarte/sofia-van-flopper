@@ -5,13 +5,26 @@ import {
     LOADER_TRANSITION,
     ROUTE,
 } from "constants";
-import { Catalog } from './sections';
+import { Catalog, MenuSelection } from './sections';
+import { useState } from 'react';
 
 const MenuScreen = () => {
     const navigate = useNavigate();
 
-    const handleReturnClick = () => {
-        navigate(ROUTE.HOME);
+    const [catalog, setCatalog] = useState(false)
+    const [billing, setBilling] = useState(false)
+
+    const returnToMenuSelection = () => {
+        setCatalog(false)
+        setBilling(false)
+    }
+    const returnToCatalog = () => {
+        setCatalog(true)
+        setBilling(false)
+    }
+    const returnToBilling = () => {
+        setCatalog(false)
+        setBilling(true)
     }
 
     return (
@@ -19,8 +32,8 @@ const MenuScreen = () => {
             <Loader transition={LOADER_TRANSITION.MENU_TRANSITION} />
             <div className={styles.container}>
                 <div className={styles.menu}>
-                    <Catalog />
-                    <button className={styles.leaveButton} onClick={handleReturnClick}>Sair</button>
+                    {!catalog && !billing && <MenuSelection returnToCatalog={returnToCatalog} />}
+                    {catalog && <Catalog returnToMenuSelection={returnToMenuSelection} />}
                 </div>
                 <div className={styles.atomPannel} />
             </div>

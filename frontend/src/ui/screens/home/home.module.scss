@@ -9,7 +9,7 @@
   justify-content: center;
   border-radius: 10px;
   background-image:
-    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%),
+    radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, 0.9) 100%),
     url('../../assets/images/sofia-van-flopper-menu.png');
   background-size: cover;
   background-position: center;
@@ -132,9 +132,9 @@
 
   background: radial-gradient(
     ellipse at center,
-    red 0%,
-    rgba(red, 0.8) 60%,
-    rgba(red, 0) 100%
+    $red 0%,
+    rgba($red, 0.8) 60%,
+    rgba($red, 0) 100%
   );
 
   animation: cherryPulse 1.5s infinite alternate ease-in-out;
@@ -144,9 +144,9 @@
   0% {
     background: radial-gradient(
       ellipse at center,
-      red 0%,
-      rgba(red, 0.8) 60%,
-      rgba(red, 0) 100%
+      $red 0%,
+      rgba($red, 0.8) 60%,
+      rgba($red, 0) 100%
     );
   }
   100% {

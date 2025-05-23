@@ -8,6 +8,7 @@
     gap: 15px;
     overflow-y: scroll;
     padding: 10px;
+    margin-bottom:40px;
 
     .menuItem {
       width: 100%;
@@ -54,29 +55,30 @@
             text-align: justify;
             line-height: 16px;
         }
-    }  
-  }
-  .returnButton {
-    height: 50px;
-    width: 100%;
-    font-size: 22px;    
-    color: $white;
-    border-radius: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 50ms ease-in-out;
-    margin-top: 25px;
-    background: radial-gradient(
-      circle at center,
-      rgba($black, 0.7) 0%,
-      rgba($black, 0.4) 50%,
-      rgba($black, 0.1) 80%,
-      rgba($black, 0) 100%
-    ); 
+        }
 
-    &:hover {
-      cursor: pointer;
-      font-weight: 650;  
-    }
+        .leaveButton {
+            height: 50px;
+            width: 100%;
+            font-size: 22px;    
+            color: $white;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 50ms ease-in-out;
+            margin-top: 55px;
+            background: radial-gradient(
+              circle at center,
+              rgba($black, 0.7) 0%,
+              rgba($black, 0.4) 50%,
+              rgba($black, 0.1) 80%,
+              rgba($black, 0) 100%
+            ); 
+        
+            &:hover {
+              cursor: pointer;
+              font-weight: 650;  
+            }
+          }
   }

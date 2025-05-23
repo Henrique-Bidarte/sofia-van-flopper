@@ -2,7 +2,7 @@ import styles from './catalog.module.scss'
 import { DesertsIcon, DrinksIcon, MagiColasIcon, MainDishesIcon, SoftDrinksIcon } from 'ui/assets';
 
 
-const Catalog = () => {
+const Catalog = ({ returnToMenuSelection }) => {
 
 
     const catalogPayload = [
@@ -41,23 +41,26 @@ const Catalog = () => {
 
 
     return (
-        <div className={styles.menuList}>
-            {catalogPayload.map(item => {
-                return (
-                    <button className={styles.menuItem}>
-                        <img className={styles.menuItemIcon} src={item.icon} />
-                        <div className={styles.menuItemText}>
-                            <div className={styles.itemTitle}>
-                                {item.title}
+        <>
+            <div className={styles.menuList}>
+                {catalogPayload.map(item => {
+                    return (
+                        <button className={styles.menuItem}>
+                            <img className={styles.menuItemIcon} src={item.icon} />
+                            <div className={styles.menuItemText}>
+                                <div className={styles.itemTitle}>
+                                    {item.title}
+                                </div>
+                                <div className={styles.itemDescription}>
+                                    {item.description}
+                                </div>
                             </div>
-                            <div className={styles.itemDescription}>
-                                {item.description}
-                            </div>
-                        </div>
-                    </button>
-                )
-            })}
-        </div>
+                        </button>
+                    )
+                })}
+            </div>
+            <button className={styles.returnButton} onClick={returnToMenuSelection}>Voltar</button>
+        </>
     )
 }
 
