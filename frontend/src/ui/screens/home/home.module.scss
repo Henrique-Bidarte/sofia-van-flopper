@@ -7,10 +7,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: homeTransition 300ms linear;
-  animation-delay: 500ms;
-  animation-fill-mode: forwards;
-  opacity: 0;
   border-radius: 10px;
   background-image:
     radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%),
@@ -18,12 +14,25 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  animation: homeTransition 300ms linear;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 
+  
+@keyframes homeTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
   .connectButton {
     height: 70px;
     width: 900px;
-    margin-top: 720px;
+    margin-top: 520px;
     font-size: 22px;
     background: radial-gradient(
       circle at center,
@@ -31,7 +40,8 @@
       rgba($black, 0.6) 50%,
       rgba($black, 0.2) 80%,
       rgba($black, 0) 100%
-    );    color: $white;
+    );    
+    color: $white;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -43,18 +53,136 @@
   }  
   &:disabled {
     cursor: default;
-    opacity: 0.6;
-    transform: translateY(-1px);
-
   }
 }
 }
 
-@keyframes homeTransition {
+
+.atomPannel{
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba($neon-purple, 0.5) 0%,
+    rgba($neon-purple, 0.3) 40%,
+    rgba($neon-purple, 0.1) 70%,
+    rgba($neon-purple, 0) 100%
+  );
+  position: absolute;
+  top: 25px;
+  left: 588px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: atomPannelTransition 1000ms ease-in-out infinite alternate;
+  animation-fill-mode: loop;
+}
+
+
+@keyframes atomPannelTransition {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: .5;
+    transform: scale(1.15);
+  }
+}
+
+.sofiaPannel{
+  width: 450px;
+  height: 200px;
+  border-radius: 25%;
+  background: radial-gradient(
+  circle,
+  rgba($brass-glow, 0.8) 0%,
+  rgba($bottle-gold, 0.6) 30%,
+  rgba($bottle-gold, 0.1) 80%,
+  transparent 100%
+);
+  position: absolute;
+  top: 125px;
+  left: 90px;
+  opacity: 0;
+  animation: sofiaPannelTransition 2000ms ease-in-out infinite alternate;
+  animation-fill-mode: loop;
+  transform: rotate(7deg);
+}
+
+
+@keyframes sofiaPannelTransition {
   0% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: .35;
+  }
+}
+
+.cherryPannel {
+  mix-blend-mode: multiply;
+  opacity: 1;
+  position: absolute;
+  top: 245px;
+  left: 763px;
+  border-radius: 50%;
+  width: 90px;
+  height: 110px;
+  z-index: 1;
+
+  background: radial-gradient(
+    ellipse at center,
+    red 0%,
+    rgba(red, 0.8) 60%,
+    rgba(red, 0) 100%
+  );
+
+  animation: cherryPulse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes cherryPulse {
+  0% {
+    background: radial-gradient(
+      ellipse at center,
+      red 0%,
+      rgba(red, 0.8) 60%,
+      rgba(red, 0) 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      ellipse at center,
+      $neon-purple 0%,
+      rgba($neon-purple, 0.6) 60%,
+      rgba($neon-purple, 0) 100%
+    );
+  }
+}
+
+.barPannel{
+  width: 200px;
+  height: 80px;
+  border-radius: 25%;
+  background: radial-gradient(
+  circle,
+  rgba($neon-cyan, 0.8) 0%,
+  rgba($bottle-blue, 0.6) 30%,
+  rgba($bottle-blue, 0.1) 80%,
+  transparent 100%
+);
+  position: absolute;
+  top: 330px;
+  left: 990px;
+  opacity: 0;
+  animation: barPannelTransition 3000ms ease-in-out infinite alternate;
+}
+
+
+@keyframes barPannelTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .25;
   }
 }

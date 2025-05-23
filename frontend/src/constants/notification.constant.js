@@ -1,6 +1,6 @@
 const CONNECTION_NOTIFICATION = {
-  SUCCESS: "Connected.",
-  FAIL: "Unable to Connect.",
+  SUCCESS: "Conectado.",
+  FAIL: "Não foi possível conectar.",
 };
 
 export { CONNECTION_NOTIFICATION };

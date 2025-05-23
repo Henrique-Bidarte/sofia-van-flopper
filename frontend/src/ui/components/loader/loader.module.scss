@@ -1,46 +1,92 @@
 @import "ui/styles/colors";
 
 .loader {
-  animation: loaderSpin 1000ms linear infinite;
+  animation: loaderSpin 2000ms ease-in-out infinite;
 }
 
 @keyframes loaderSpin {
   0% {
     transform: rotate(0deg);
+    filter: brightness(1);
   }
+
+  25%{
+    filter: brightness(2);
+  }
+
+  50%{
+    filter: brightness(1);
+  }
+
+  75%{
+    filter: brightness(2);
+  }
+
   100% {
     transform: rotate(360deg);
+    filter: brightness(1);
   }
 }
 
 .tiny {
   height: 20px;
   width: 20px;
-  border: solid 2px $bottle-purple;
-  border-bottom: solid 2px $bronze-dark;
-  border-radius: 10px;
+  
 }
 
 .small {
   height: 40px;
   width: 40px;
-  border: solid 5px $neon-purple;
-  border-bottom: solid 5px $copper-pipe;
-  border-radius: 20px;
+
 }
 
 .medium {
   height: 50px;
   width: 50px;
-  border: solid 5px $neon-cyan;
-  border-bottom: solid 5px $bronze-light;
-  border-radius: 25px;
+
 }
 
 .large {
   height: 80px;
   width: 80px;
-  border: solid 8px $brass-glow;
-  border-bottom: solid 8px $black;
-  border-radius: 40px;
+
+}
+
+.menuTransition {
+  position: absolute;
+  top: 600px;
+  left: 594px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  z-index: 2;
+  animation: menuTransition 2125ms ease-in-out, loaderSpin 2000ms ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes menuTransition {
+  0%{
+    top: 600px;
+    left: 594px;
+  }
+  10% {
+    width: 40px;
+    height: 40px;
+    top: 600px;
+    left: 594px;
+  }
+  90% {
+    top: 333px;
+    left: 818px;
+    width: 230px;
+    height: 238px;
+    opacity: 1;
+  }
+  100%{
+    top: 333px;
+    left: 818px;
+    width: 230px;
+    height: 238px;
+    opacity: 0;
+  }
 }

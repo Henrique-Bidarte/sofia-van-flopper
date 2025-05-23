@@ -5,6 +5,11 @@ const LOADER_VARIATION = {
   LARGE: "large",
 };
 
+const LOADER_TRANSITION = {
+  MENU_TRANSITION: "menuTransition"
+};
+
 export {
   LOADER_VARIATION,
+  LOADER_TRANSITION
 };

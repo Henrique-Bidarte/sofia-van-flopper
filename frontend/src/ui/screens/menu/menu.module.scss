@@ -1,0 +1,109 @@
+@import "ui/styles/colors";
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+  background-image:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%),
+    url('../../assets/images/sofia-van-flopper-login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: menuTransition 500ms linear;
+  animation-delay: 1800ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  @keyframes menuTransition {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 30px 0 30px 0;
+  width: 500px;
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba($black, .1) 0%,
+    rgba($black, 0.5) 40%,
+    rgba($black, 0.5) 60%,
+    rgba($black, .1) 100%
+  );
+  box-shadow:
+    inset 0 0 10px rgba($bronze-light, 0.2),
+    0 0 12px rgba($metal-shadow, 0.4);
+
+  backdrop-filter: blur(5px);
+
+
+  .leaveButton {
+    height: 70px;
+    width: 90%;
+    font-size: 22px;    
+    color: $white;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 120ms ease-in-out;
+    margin-top: 15px;
+    background: radial-gradient(
+      circle at center,
+      rgba($black, 0.7) 0%,
+      rgba($black, 0.4) 50%,
+      rgba($black, 0.1) 80%,
+      rgba($black, 0) 100%
+    ); 
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 650;  
+    }
+  }
+}
+}
+
+.atomPannel{
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+      circle,
+      rgba($neon-purple, 0.5) 0%,
+      rgba($neon-purple, 0.3) 40%,
+      rgba($neon-purple, 0.1) 70%,
+      rgba($neon-purple, 0) 100%
+    );
+    position: absolute;
+    top: 350px;
+    left: 835px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: atomPannelTransition 1000ms ease-in-out infinite alternate;
+    animation-fill-mode: loop;
+  }
+  
+  @keyframes atomPannelTransition {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: .75;
+      transform: scale(1.15);
+    }
+  }
