@@ -1,6 +1,8 @@
 const ROUTE = {
   HOME: "/",
-  MENU: "/menu"
+  MENU: "/menu",
+  LOGIN: "/login",
+  ADMIN: "/admin"
 };
 
 export { ROUTE };

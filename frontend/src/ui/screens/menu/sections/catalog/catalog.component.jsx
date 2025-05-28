@@ -2,7 +2,7 @@ import styles from './catalog.module.scss'
 import { DesertsIcon, DrinksIcon, MagiColasIcon, MainDishesIcon, SoftDrinksIcon } from 'ui/assets';
 
 
-const Catalog = ({ returnToMenuSelection }) => {
+const Catalog = ({ catalog, returnToMenuSelection }) => {
 
 
     const catalogPayload = [
@@ -41,7 +41,7 @@ const Catalog = ({ returnToMenuSelection }) => {
 
 
     return (
-        <>
+        <div className={`${styles.container} ${catalog ? styles.openTransition : styles.closeTransition}`}>
             <div className={styles.menuList}>
                 {catalogPayload.map(item => {
                     return (
@@ -59,8 +59,10 @@ const Catalog = ({ returnToMenuSelection }) => {
                     )
                 })}
             </div>
-            <button className={styles.returnButton} onClick={returnToMenuSelection}>Voltar</button>
-        </>
+            <button className={styles.returnButton} onClick={returnToMenuSelection}>
+                Voltar
+            </button>
+        </div>
     )
 }
 

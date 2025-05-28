@@ -1,5 +1,5 @@
 const EASE_TIMEOUT = {
-  EASE1: 1500,
+  EASE1: 750,
   EASE2: 2000,
   EASE3: 3000,
   EASE4: 4000,

@@ -7,6 +7,7 @@ import SoftDrinksIcon from "./images/soft-drinks.png"
 import CatalogIcon from "./images/catalog.png"
 import AboutIcon from "./images/about.png"
 import BillingIcon from "./images/billing.png"
+import StaffButton from "./images/staff-button.png"
 
 export {
     LoaderIcon,
@@ -17,5 +18,6 @@ export {
     SoftDrinksIcon,
     CatalogIcon,
     AboutIcon,
-    BillingIcon
+    BillingIcon,
+    StaffButton
 };

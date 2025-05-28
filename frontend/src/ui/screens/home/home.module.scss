@@ -1,6 +1,8 @@
 @import "ui/styles/colors";
 
 .container {
+  position: relative;
+  overflow: hidden;
   height: 100%;
   width: 100%;
   display: flex;
@@ -10,12 +12,12 @@
   border-radius: 10px;
   background-image:
     radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, 0.9) 100%),
-    url('../../assets/images/sofia-van-flopper-menu.png');
+    url('../../assets/images/sofia-van-flopper-home.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   animation: homeTransition 300ms linear;
-  animation-delay: 500ms;
+  animation-delay: 300ms;
   animation-fill-mode: forwards;
   opacity: 0;
 
@@ -28,10 +30,9 @@
     opacity: 1;
   }
 }
-
   .connectButton {
     height: 70px;
-    width: 900px;
+    width: 500px;
     margin-top: 520px;
     font-size: 22px;
     background: radial-gradient(
@@ -42,20 +43,100 @@
       rgba($black, 0) 100%
     );    
     color: $white;
-    border-radius: 10px;
+    border-top: 1px solid rgba($bottle-orange, 0.1);
+    border-bottom: 1px solid rgba($bottle-orange, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 120ms ease-in-out;
     &:hover {
       cursor: pointer;
       font-weight: 650;
-  }  
-  &:disabled {
-    cursor: default;
+      border-top: 1px solid rgba($white, 0.1);
+      border-bottom: 1px solid rgba($white, 0.1);
+    }  
+    &:disabled {
+      cursor: default;
+      color: rgba($white, 0.4);
+      }
+  }
+
+  .staffAccess{
+    position: absolute;
+    bottom: 0px;
+    right: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(40px);
+
+    .staffButtonActivation{
+      &:hover{
+        cursor: pointer;
+        filter: brightness(1.5);
+      }
+
+      .staffIcon{
+        width: 100px;
+      }
+    }
+
+    .staffButton{
+      height: 40px;
+      width: 200px;
+      font-size: 16px;
+      background: radial-gradient(
+        circle at center,
+        rgba($black, 0.92) 0%,
+        rgba($black, 0.6) 50%,
+        rgba($black, 0.2) 80%,
+        rgba($black, 0) 100%
+      );    
+      color: $white;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        font-weight: 650;
+      }  
+      &:disabled {
+        cursor: default;
+        color: rgba($white, 0.4);
+      }
+    }
+
+
+  }
+    .openTransition{
+      animation: openAnimation 100ms linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes openAnimation {
+      0% {
+        transform: translateX(40);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+  }
+
+    .closeTransition{
+      animation: closeAnimation 100ms linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes closeAnimation {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(40);
+      }
   }
 }
-}
+
 
 
 .atomPannel{

@@ -3,9 +3,8 @@ import { AboutIcon, BillingIcon, CatalogIcon } from "ui/assets"
 import { ROUTE } from "constants";
 import { useNavigate } from "react-router-dom";
 
-const MenuSelection = ({ returnToMenuSelection, returnToCatalog, returnToBilling }) => {
+const MenuSelection = ({ menuSelection, returnToCatalog }) => {
     const navigate = useNavigate();
-
 
     const handleReturnClick = () => {
         navigate(ROUTE.HOME);
@@ -36,24 +35,28 @@ const MenuSelection = ({ returnToMenuSelection, returnToCatalog, returnToBilling
     ]
 
     return (
-        <div className={styles.menuList}>
-            {menuSelectionPayload.map(item => {
-                return (
-                    <button className={styles.menuItem} onClick={() => item.click()}>
-                        <img className={styles.menuItemIcon} src={item.icon} />
-                        <div className={styles.menuItemText}>
-                            <div className={styles.itemTitle}>
-                                {item.title}
+        <div className={`${styles.container} ${menuSelection ? styles.openTransition : styles.closeTransition}`}>
+            <div className={styles.menuList}>
+                {menuSelectionPayload.map(item => {
+                    return (
+                        <button className={styles.menuItem} onClick={() => item.click()}>
+                            <img className={styles.menuItemIcon} src={item.icon} />
+                            <div className={styles.menuItemText}>
+                                <div className={styles.itemTitle}>
+                                    {item.title}
+                                </div>
+                                <div className={styles.itemDescription}>
+                                    {item.description}
+                                </div>
                             </div>
-                            <div className={styles.itemDescription}>
-                                {item.description}
-                            </div>
-                        </div>
-                    </button >
-                )
-            })}
-            <button className={styles.leaveButton} onClick={handleReturnClick}>Sair</button>
-        </div >
+                        </button >
+                    )
+                })}
+            </div >
+            <button className={styles.leaveButton} onClick={handleReturnClick}>
+                Desconectar
+            </button>
+        </div>
     )
 }
 

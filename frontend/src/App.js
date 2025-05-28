@@ -1,4 +1,4 @@
-import { HomeScreen, MenuScreen } from "ui/screens";
+import { AdminScreen, HomeScreen, LoginScreen, MenuScreen } from "ui/screens";
 import { Route, Routes } from "react-router-dom";
 import { ROUTE } from "constants";
 
@@ -12,6 +12,8 @@ function App() {
         <Routes>
           <Route path={ROUTE.HOME} exact element={<HomeScreen />} />
           <Route path={ROUTE.MENU} exact element={<MenuScreen />} />
+          <Route path={ROUTE.LOGIN} exact element={<LoginScreen />} />
+          <Route path={ROUTE.ADMIN} exact element={<AdminScreen />} />
         </Routes>
       </div>
     </div>

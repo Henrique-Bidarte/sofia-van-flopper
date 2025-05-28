@@ -8,45 +8,73 @@ import {
   LOADER_VARIATION,
   CONNECTION_NOTIFICATION,
   ROUTE,
-  EASE_TIMEOUT
 } from "constants";
+import { StaffButton } from "ui/assets";
 
 const HomeScreen = () => {
-  const [loader, setLoader] = useState(false);
+  const [customerLoader, setCustomerLoader] = useState(false);
+  const [staffLoader, setStaffLoader] = useState(false);
+  const [staffAccess, setStaffAccess] = useState(false)
+
   const { getHealthCheck } = useHealthCheck();
   const navigate = useNavigate();
 
-  const handleConnectClick = async () => {
-    setLoader(true);
+  const handleStaffAccessClick = () => {
+    setStaffAccess(!staffAccess)
+  }
+
+  const handleCustomerClick = async () => {
+    setCustomerLoader(true);
+    navigateFromHome(ROUTE.MENU);
+  }
+
+  const handleStaffClick = async () => {
+    setStaffLoader(true);
+    navigateFromHome(ROUTE.LOGIN);
+  };
+
+  const navigateFromHome = async (path) => {
     const serverStatus = await getHealthCheck();
 
     // if (serverStatus) {
     if (true) {
       sendNotification(CONNECTION_NOTIFICATION.SUCCESS);
-      setTimeout(() => {
-        navigate(ROUTE.MENU);
-      }, EASE_TIMEOUT.EASE1);
+      navigate(path);
     } else {
       sendNotification(CONNECTION_NOTIFICATION.FAIL);
-      setLoader(false);
+      setStaffLoader(false);
+      setCustomerLoader(false);
     }
-  };
+  }
+
 
   return (
     <>
       <div className={styles.container}>
         <button
           className={styles.connectButton}
-          onClick={handleConnectClick}
-          disabled={loader}
+          onClick={handleCustomerClick}
+          disabled={customerLoader || staffLoader}
         >
-          {loader ? <Loader variation={LOADER_VARIATION.SMALL} /> : "CONECTAR"}
+          {customerLoader ? <Loader variation={LOADER_VARIATION.SMALL} /> : "Conectar"}
         </button>
+        <div className={`${styles.staffAccess}  ${staffAccess ? styles.openTransition : styles.closeTransition}`}>
+          <button className={styles.staffButtonActivation} onClick={handleStaffAccessClick}>
+            <img src={StaffButton} className={styles.staffIcon} />
+          </button>
+          <button
+            className={styles.staffButton}
+            onClick={handleStaffClick}
+            disabled={customerLoader || staffLoader}
+          >
+            {staffLoader ? <Loader variation={LOADER_VARIATION.TINY} /> : "Funcionario"}
+          </button>
+        </div>
         <div className={styles.atomPannel} />
         <div className={styles.sofiaPannel} />
         <div className={styles.cherryPannel} />
         <div className={styles.barPannel} />
-      </div>
+      </div >
     </>
   );
 };

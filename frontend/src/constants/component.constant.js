@@ -6,7 +6,6 @@ const LOADER_VARIATION = {
 };
 
 const LOADER_TRANSITION = {
-  MENU_TRANSITION: "menuTransition"
 };
 
 export {
