@@ -1,5 +1,5 @@
 import styles from './catalog.module.scss'
-import { DesertsIcon, DrinksIcon, MagiColasIcon, MainDishesIcon, SoftDrinksIcon } from 'ui/assets';
+import { DesertsIcon, DrinksIcon, MagiColasIcon, MainDishesIcon, ReturnIcon, SoftDrinksIcon } from 'ui/assets';
 
 
 const Catalog = ({ catalog, returnToMenuSelection }) => {
@@ -61,6 +61,7 @@ const Catalog = ({ catalog, returnToMenuSelection }) => {
             </div>
             <button className={styles.returnButton} onClick={returnToMenuSelection}>
                 Voltar
+                <img className={styles.returnIcon} src={ReturnIcon} />
             </button>
         </div>
     )

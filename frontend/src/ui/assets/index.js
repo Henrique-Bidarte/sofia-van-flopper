@@ -8,6 +8,7 @@ import CatalogIcon from "./images/catalog.png"
 import AboutIcon from "./images/about.png"
 import BillingIcon from "./images/billing.png"
 import StaffButton from "./images/staff-button.png"
+import ReturnIcon from "./images/return-icon.png"
 
 export {
     LoaderIcon,
@@ -19,5 +20,6 @@ export {
     CatalogIcon,
     AboutIcon,
     BillingIcon,
-    StaffButton
+    StaffButton,
+    ReturnIcon
 };

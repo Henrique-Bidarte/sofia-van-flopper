@@ -1,5 +1,5 @@
 import styles from "./menu-selection.module.scss"
-import { AboutIcon, BillingIcon, CatalogIcon } from "ui/assets"
+import { AboutIcon, BillingIcon, CatalogIcon, ReturnIcon } from "ui/assets"
 import { ROUTE } from "constants";
 import { useNavigate } from "react-router-dom";
 
@@ -14,15 +14,8 @@ const MenuSelection = ({ menuSelection, returnToCatalog }) => {
         {
             icon: CatalogIcon,
             title: "Cardápio",
-            description: "Todas as opções da casa, organizadas com a precisão de um relógio enferrujado. Se está no menu, provavelmente ainda é legal servir.",
+            description: "Todas as opções da casa. Se está no menu, provavelmente ainda é legal servir.",
             key: "cardapio",
-            click: returnToCatalog
-        },
-        {
-            icon: BillingIcon,
-            title: "Consultar Comanda",
-            description: "Total da sua comanda calculado por um autômato disléxico. Valores cobrados com base em tabelas, gastos duvidosos e critérios que nem o gerente entende.",
-            key: "billing",
             click: returnToCatalog
         },
         {
@@ -30,6 +23,13 @@ const MenuSelection = ({ menuSelection, returnToCatalog }) => {
             title: "Sobre o Sofia Van Flopper",
             description: "Informações institucionais, lendas não confirmadas e o motivo de termos um gerador nuclear no porão.",
             key: "about",
+            click: returnToCatalog
+        },
+        {
+            icon: BillingIcon,
+            title: "Consultar Comanda",
+            description: "Total da sua comanda calculado por um autômato disléxico.",
+            key: "billing",
             click: returnToCatalog
         },
     ]
@@ -40,7 +40,6 @@ const MenuSelection = ({ menuSelection, returnToCatalog }) => {
                 {menuSelectionPayload.map(item => {
                     return (
                         <button className={styles.menuItem} onClick={() => item.click()}>
-                            <img className={styles.menuItemIcon} src={item.icon} />
                             <div className={styles.menuItemText}>
                                 <div className={styles.itemTitle}>
                                     {item.title}
@@ -49,11 +48,13 @@ const MenuSelection = ({ menuSelection, returnToCatalog }) => {
                                     {item.description}
                                 </div>
                             </div>
+                            <img className={styles.menuItemIcon} src={item.icon} />
                         </button >
                     )
                 })}
             </div >
             <button className={styles.leaveButton} onClick={handleReturnClick}>
+                <img className={styles.returnIcon} src={ReturnIcon} />
                 Desconectar
             </button>
         </div>
