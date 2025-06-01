@@ -1,7 +1,12 @@
-const ROUTES = {
+const ROUTER = {
+  TESLA_MOTORS: "/sofia-van-flopper",
+};
+
+const ROUTER_ENDPOINTS = {
   HEALTH_CHECK: "/healthcheck",
 };
 
 module.exports = {
-  ROUTES,
-};
+  ROUTER,
+  ROUTER_ENDPOINTS,
+}

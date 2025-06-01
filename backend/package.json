@@ -1,20 +1,21 @@
 {
-  "name": "beholder-server",
+  "name": "tesla-motors-message-server",
   "version": "1.0.0",
-  "description": "Beholder App Server",
+  "description": "Tesla Motors Message App Server",
   "main": "src/app.js",
   "scripts": {
-    "server": "node src/app.js",
-    "server:dev": "nodemon src/app.js",
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Henrique-Bidarte",
   "license": "ISC",
   "dependencies": {
+    "axios": "1.7.9",
     "cors": "2.8.5",
     "express": "4.18.2",
     "express-validator": "7.0.1",
-    "nodemon": "2.0.22"
+    "nodemon": "2.0.22",
+    "notarealdb": "0.2.2"
   }
 }

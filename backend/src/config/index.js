@@ -1,4 +1,4 @@
-const { configureServer } = require("./server.config");
+const { configureServer } = require("./server.config")
 
 module.exports = {
   configureServer,

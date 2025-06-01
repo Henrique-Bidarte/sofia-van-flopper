@@ -1,4 +1,4 @@
-const { validateRequest } = require("./validation-rules");
+const { validateRequest } = require("./validation-rules")
 
 const execUseCase = async (req, useCase) => {
   return await useCase({
@@ -21,14 +21,14 @@ const get = ({
     validateRequest,
     async (req, res, next) => {
       try {
-        const result = await execUseCase(req, useCase);
+        const result = await execUseCase(req, useCase)
         if (result) {
-          return res.status(200).json(responseMapper(result));
+          return res.status(200).json(responseMapper(result))
         } else {
           return res.sendStatus(404);
         }
       } catch (err) {
-        next(err);
+        next(err)
       }
     }
   );
@@ -47,20 +47,20 @@ const post = ({
     validateRequest,
     async (req, res, next) => {
       try {
-        const result = await execUseCase(req, useCase);
+        const result = await execUseCase(req, useCase)
         if (result) {
-          return res.status(201).json(responseMapper(result));
+          return res.status(201).json(responseMapper(result))
         } else {
           return res.sendStatus(422);
         }
       } catch (err) {
-        next(err);
+        next(err)
       }
     }
-  );
-};
+  )
+}
 
 module.exports = {
   get,
   post,
-};
+}
