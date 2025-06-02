@@ -1,9 +1,10 @@
 const ROUTER = {
-  TESLA_MOTORS: "/sofia-van-flopper",
+  SOFIA_VAN_FLOPPER: "/sofia-van-flopper",
 };
 
 const ROUTER_ENDPOINTS = {
   HEALTH_CHECK: "/healthcheck",
+  CATALOG: "/catalog"
 };
 
 module.exports = {

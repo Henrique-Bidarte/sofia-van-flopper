@@ -1,7 +1,7 @@
 {
-  "name": "tesla-motors-message-server",
+  "name": "sofia-van-flopper-server",
   "version": "1.0.0",
-  "description": "Tesla Motors Message App Server",
+  "description": "Sofia Van Flopper App Server",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

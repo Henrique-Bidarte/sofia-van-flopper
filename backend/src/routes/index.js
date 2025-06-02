@@ -1,9 +1,9 @@
 const { createHealthRoutes } = require("./health-check-route/health-check.route")
-const { createTeslaMotorsRoutes } = require("./tesla-motors-route/tesla-motors-route")
+const { createCatalogRoutes } = require("./sofia-van-flopper-route/sofia-van-flopper-route")
 
 const createRoutes = (app) => {
   createHealthRoutes(app);
-  createTeslaMotorsRoutes(app)
+  createCatalogRoutes(app)
 };
 
 module.exports = {

@@ -1,7 +1,5 @@
-const { teslaMotorsPostMessageUseCase } = require("./tesla-motors-message/tesla-motors-post-message.use-case")
-const { teslaMotorsGetMessageUseCase } = require("./tesla-motors-message/tesla-motors-get-message.use-case")
+const { getCatalogUseCase } = require('./catalog/catalog.use-case')
 
 module.exports = {
-  teslaMotorsPostMessageUseCase,
-  teslaMotorsGetMessageUseCase
+  getCatalogUseCase
 }

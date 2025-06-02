@@ -7,7 +7,7 @@ const healthCheck = (req, res) => {
 }
 
 const createHealthRoutes = (app) => {
-  app.get(`${ROUTER.TESLA_MOTORS}${ROUTER_ENDPOINTS.HEALTH_CHECK}`, healthCheck)
+  app.get(`${ROUTER.SOFIA_VAN_FLOPPER}${ROUTER_ENDPOINTS.HEALTH_CHECK}`, healthCheck)
 }
 
 module.exports = {
