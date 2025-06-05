@@ -1,92 +1,124 @@
 @import "ui/styles/colors";
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   background-image:
     radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, 0.5) 100%),
     url('../../../../assets/images/sofia-van-flopper-about.png');
   background-size: cover;
   background-position: center;
 
-  .aboutContainer{
+  .aboutContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 46%;
     height: 100%;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
+    padding: 20px;
 
-        .aboutSection{
-            width: 100%;
-            height: 70%;
-            display: flex;
-            flex-direction: column;
-            align-items: center
+     .aboutIcon{
+        width: 180px;
+        filter: brightness(1.5);
+        margin-bottom: -10px;
         }
-            
-            .returnButton {
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            height: 60px;
-            border-radius: 8px;
-            transition: all 50ms ease-in-out;
-            color: $white;
-            font-size: 20px;
-            margin-top: 20px;
-            padding-right: 50px;
-            background: linear-gradient(to right, rgba($black,0.8), rgba($black,0));
     
-            &:hover {
-                cursor: pointer;
-                filter: brightness(1.3);
-                }
-            
-            .returnIcon{
-                width: 50px;
-                transform: translateX(-160px);
-                }
-            } 
+    .aboutSection {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        font-size: 14px;
+        color: $white;
+        padding: 10px;
+        gap: 10px;
+
+      .aboutText {
+        color: $white;
+        text-align: justify;
+        padding: 0px 20px 20px 20px;
+        white-space: pre-line;
+
+        p {
+            margin-bottom: 1em;
+            text-indent: 4em;
+        }
+    }
+
+      .footerText {
+        margin-top: -40px;
+        font-size: 11px;
+        font-style: italic;
+        opacity: 0.8;
+        text-align: center;
+        white-space: pre-line;
+      }
+    }
+
+    .returnButton {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 60px;
+      border-radius: 8px;
+      transition: all 50ms ease-in-out;
+      color: $white;
+      font-size: 20px;
+      margin-top: 20px;
+      padding-right: 50px;
+      background: linear-gradient(to right, rgba($black, 0.8), rgba($black, 0));
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(1.3);
+      }
+
+      .returnIcon {
+        width: 50px;
+        transform: translateX(-160px);
+      }
+    }
   }
 }
 
- .openTransition{
-    animation: openAnimation 400ms linear;
-    animation-fill-mode: forwards;
-    }
+.openTransition {
+  animation: openAnimation 400ms linear;
+  animation-fill-mode: forwards;
+}
 
+@keyframes openAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 
-  @keyframes openAnimation {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0px);
-      opacity: 1;
-    }
+.closeTransition {
+  animation: closeAnimation 200ms linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes closeAnimation {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
   }
-  
-  .closeTransition{
-    animation: closeAnimation 200ms linear;
-    animation-fill-mode: forwards;
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  @keyframes closeAnimation {
-    0% {
-      transform: translateX(0px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
+}

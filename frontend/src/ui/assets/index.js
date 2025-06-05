@@ -9,6 +9,9 @@ import AboutIcon from "./images/about.png"
 import BillingIcon from "./images/billing.png"
 import StaffButton from "./images/staff-button.png"
 import ReturnIcon from "./images/return-icon.png"
+import JarIcon from "./images/jar.png"
+import JarLogo from "./images/jar-logo.png"
+import AboutLogo from "./images/about-logo.png"
 
 export {
     LoaderIcon,
@@ -21,5 +24,8 @@ export {
     AboutIcon,
     BillingIcon,
     StaffButton,
-    ReturnIcon
+    ReturnIcon,
+    JarIcon,
+    JarLogo,
+    AboutLogo
 };
