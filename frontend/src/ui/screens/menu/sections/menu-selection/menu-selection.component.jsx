@@ -3,7 +3,7 @@ import { AboutIcon, BillingIcon, CatalogIcon, ReturnIcon } from "ui/assets"
 import { ROUTE } from "constants";
 import { useNavigate } from "react-router-dom";
 
-const MenuSelection = ({ menuSelection, returnToCatalog }) => {
+const MenuSelection = ({ menuSelection, goToCatalog, goToAbout, goToBilling }) => {
     const navigate = useNavigate();
 
     const handleReturnClick = () => {
@@ -16,26 +16,27 @@ const MenuSelection = ({ menuSelection, returnToCatalog }) => {
             title: "Cardápio",
             description: "Todas as opções da casa. Se está no menu, provavelmente ainda é legal servir.",
             key: "cardapio",
-            click: returnToCatalog
+            click: goToCatalog
         },
         {
             icon: AboutIcon,
             title: "Sobre o Sofia Van Flopper",
             description: "Informações institucionais, lendas não confirmadas e o motivo de termos um gerador nuclear no porão.",
             key: "about",
-            click: returnToCatalog
+            click: goToAbout
         },
         {
             icon: BillingIcon,
             title: "Consultar Comanda",
             description: "Total da sua comanda calculado por um autômato disléxico.",
             key: "billing",
-            click: returnToCatalog
+            click: goToBilling
         },
     ]
 
     return (
         <div className={`${styles.container} ${menuSelection ? styles.openTransition : styles.closeTransition}`}>
+            <div className={styles.atomPannel} />
             <div className={styles.menuList}>
                 {menuSelectionPayload.map(item => {
                     return (

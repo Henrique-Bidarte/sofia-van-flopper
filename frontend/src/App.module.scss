@@ -9,6 +9,7 @@
   align-items: center;
   background-color: $black;
   color: $black;
+  overflow: hidden;
 
   .appContainer {
     height: $app_container_height;
@@ -16,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 }
 
