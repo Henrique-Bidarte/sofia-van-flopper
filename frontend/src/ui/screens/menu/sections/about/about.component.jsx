@@ -7,6 +7,8 @@ const About = ({ about, returnToMenuSelection }) => {
     const aboutText = `
     Fundado durante um blecaute diplomático entre a Guilda dos Meteoturgos e burocratas com um talento extraordinário para atrapalhar acordos simples, o Sofia Van Flopper surgiu de uma aposta mal explicada, dois barris de plasmídeo adulterado e uma licença de funcionamento escrita em uma língua que ninguém entende. 
 
+    O bar leva o nome de sua fundadora, Sofia Van Flopper, doutora em física de partículas instáveis, radioatividade comportamental e farmacodinâmica improvisada. Sofia desenvolveu suas primeiras fórmulas enquanto pesquisava os efeitos de isótopos não catalogados em organismos semi-voluntários, acumulando 27 renomados artigos e 1 mandado de restrição acadêmica.
+
     Erguido sobre o que pode ter sido uma instalação de testes alquímicos fracassada, uma lavanderia, ou simplesmente um erro arquitetônico admirável, o bar também conta com uma linha do Expresso Relâmpago que deveria estar desativada... mas insiste em passar por aqui aos domingos. A explicação oficial? Não temos. E se tivéssemos, provavelmente ignoraríamos.
 
     Desde então, temos servido como ponto de encontro para quem foi expulso de estabelecimentos com padrões. Se você já teve sua entrada negada por “violar as leis da termodinâmica”,  bem-vindo ao lar.
