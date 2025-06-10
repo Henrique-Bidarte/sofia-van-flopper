@@ -9,7 +9,7 @@
   justify-content: center;
   background-image:
     radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, 0.5) 100%),
-    url('../../../../assets/images/sofia-van-flopper-billing.png');
+    url('../../../../assets/background-images/sofia-van-flopper-billing.png');
   background-size: cover;
   background-position: center;
 
@@ -38,7 +38,6 @@
             text-align: center;
             width: 100%;
             height: 60px;
-            border-radius: 8px;
             transition: all 50ms ease-in-out;
             color: $white;
             font-size: 20px;

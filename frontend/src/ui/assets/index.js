@@ -1,17 +1,16 @@
-import LoaderIcon from "./images/loader.png"
-import DesertsIcon from "./images/deserts.png"
-import DrinksIcon from "./images/drinks.png"
-import MagiColasIcon from "./images/magi-colas.png"
-import MainDishesIcon from "./images/main-dishes.png"
-import SoftDrinksIcon from "./images/soft-drinks.png"
-import CatalogIcon from "./images/catalog.png"
-import AboutIcon from "./images/about.png"
-import BillingIcon from "./images/billing.png"
-import StaffButton from "./images/staff-button.png"
-import ReturnIcon from "./images/return-icon.png"
-import JarIcon from "./images/jar.png"
-import JarLogo from "./images/jar-logo.png"
-import AboutLogo from "./images/about-logo.png"
+import LoaderIcon from "./icons/loader.png"
+import DesertsIcon from "./icons/deserts.png"
+import DrinksIcon from "./icons/drinks.png"
+import MagiColasIcon from "./icons/magi-colas.png"
+import MainDishesIcon from "./icons/main-dishes.png"
+import SoftDrinksIcon from "./icons/soft-drinks.png"
+import CatalogIcon from "./icons/catalog.png"
+import AboutIcon from "./icons/about.png"
+import BillingIcon from "./icons/billing.png"
+import StaffButton from "./icons/staff-button.png"
+import ReturnIcon from "./icons/return-icon.png"
+import JarIcon from "./icons/jar.png"
+import AboutLogo from "./icons/about-logo.png"
 
 export {
     LoaderIcon,
@@ -26,6 +25,5 @@ export {
     StaffButton,
     ReturnIcon,
     JarIcon,
-    JarLogo,
     AboutLogo
 };
