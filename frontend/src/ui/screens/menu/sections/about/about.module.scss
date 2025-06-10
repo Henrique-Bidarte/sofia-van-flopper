@@ -86,6 +86,36 @@
   }
 }
 
+ .atomPannel{
+    width: 105px;
+    height: 105px;
+    background: radial-gradient(
+      circle,
+      rgba($neon-purple, 0.5) 0%,
+      rgba($neon-purple, 0.3) 40%,
+      rgba($neon-purple, 0.1) 50%,
+      rgba($neon-purple, 0) 90%
+    );
+    position: absolute;
+    bottom: 175px;
+    right: 325px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: atomPannelTransition 2000ms ease-in-out infinite alternate;
+    animation-fill-mode: loop;
+  }
+  
+  @keyframes atomPannelTransition {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: .55;
+      transform: scale(1.55);
+    }
+  }
+
 .openTransition {
   animation: openAnimation 400ms linear;
   animation-fill-mode: forwards;

@@ -4,6 +4,7 @@ import styles from './billing.module.scss'
 const Billing = ({ billing, returnToMenuSelection }) => {
     return (
         <div className={`${styles.container} ${billing ? styles.openTransition : styles.closeTransition}`}>
+            <div className={styles.atomPannel} />
             <div className={styles.billingContainer}>
                 <div className={styles.billingSection}>
 

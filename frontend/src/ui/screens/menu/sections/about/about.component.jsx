@@ -27,6 +27,7 @@ const About = ({ about, returnToMenuSelection }) => {
 
     return (
         <div className={`${styles.container} ${about ? styles.openTransition : styles.closeTransition}`}>
+            <div className={styles.atomPannel} />
             <div className={styles.aboutContainer}>
                 <div className={styles.aboutSection}>
                     <div className={styles.aboutText}>

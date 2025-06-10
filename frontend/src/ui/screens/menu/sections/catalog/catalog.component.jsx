@@ -40,6 +40,7 @@ const Catalog = ({ catalog, returnToMenuSelection }) => {
 
     return (
         <div className={`${styles.container} ${catalog ? styles.openTransition : styles.closeTransition}`}>
+            <div className={styles.atomPannel} />
             <div className={styles.catalogContainer}>
                 <div className={styles.menuList}>
                     {catalogPayload.map(item => {
