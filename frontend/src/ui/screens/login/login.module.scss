@@ -20,168 +20,161 @@
   opacity: 0;
 
   @keyframes menuTransition {
-        0% {
-        opacity: 0;
-            }
-        100% {
-        opacity: 1;
-        }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 200px;
+    left: 370px;
+    transform: rotateZ(2deg);
+    z-index: 999;
+
+    .input {
+      width: 300px;
+      height: 80px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($white, 0.3) 0%,
+        rgba($white, 0.1) 40%,
+        rgba($white, 0) 90%
+      );
+      color: black;
+      font-weight: 600;
+      text-align: center;
+      font-size: 22px;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
     }
 
-    .formContainer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 250px;
-        left: 370px;
-        transform: rotateZ(2deg);
-        z-index: 999;
+    .buttonContainer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
 
-        .input {
-            width: 300px;
-            margin-bottom: 10px;
-            padding: 10px 15px;
-            border: 1px solid rgba($white, 0.3);
-            border-radius: 4px;
-            background-color: rgba($white, 0.2); // leve translucidez
-            backdrop-filter: blur(6px); // efeito de desfoque do fundo
-            -webkit-backdrop-filter: blur(6px); // compatibilidade com Safari
-            color: black; // letras pretas
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.2); // brilho esverdeado leve para parecer do monitor
-            font-weight: 600;
-            text-align: center;
-          
-            &::placeholder {
-              color: rgba($black, 0.6);
-            }
-          
-            &:focus {
-              outline: none;
-              border-color: rgba($neon-green, 0.5);
-              box-shadow: 0 0 12px rgba($neon-green, 0.4);
-            }
-          }
+      .formButton {
+        padding: 10px 20px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba($white, 0.3) 0%,
+          rgba($white, 0.1) 40%,
+          rgba($white, 0) 90%
+        );
+        color: black;
+        font-weight: bold;
 
-        .buttonContainer{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-
-            .formButton {
-                padding: 10px 20px;
-                border: 1px solid rgba($white, 0.3);
-                border-radius: 4px;
-                background-color: rgba($white, 0.15);
-                backdrop-filter: blur(6px);
-                -webkit-backdrop-filter: blur(6px);
-                color: black;
-                font-weight: bold;
-                box-shadow: 0 0 8px rgba($neon-green, 0.2);
-                transition: all 0.2s ease-in-out;
-              
-                &:hover {
-                  cursor: pointer;
-                  background-color: rgba($white, 0.25);
-                  box-shadow: 0 0 12px rgba($neon-green, 0.4);
-                }
-              
-                &:active {
-                  transform: scale(0.97);
-                  box-shadow: 0 0 6px rgba($neon-green, 0.6);
-                }
-              }
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.02);
         }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
     }
+  }
 }
 
-.atomPannel{
-    width: 130px;
-    height: 130px;
-    background: radial-gradient(
-      circle,
-      rgba($neon-purple, 0.5) 0%,
-      rgba($neon-purple, 0.2) 40%,
-      rgba($neon-purple, 0.1) 70%,
-      rgba($neon-purple, 0) 100%
-    );
-    position: absolute;
-    top: 70px;
-    left: 935px;
-    border-radius: 50%;
+.atomPannel {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(
+    circle,
+    rgba($neon-purple, 0.5) 0%,
+    rgba($neon-purple, 0.2) 40%,
+    rgba($neon-purple, 0.1) 70%,
+    rgba($neon-purple, 0) 100%
+  );
+  position: absolute;
+  top: 70px;
+  left: 935px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: atomPannelTransition 1000ms ease-in-out infinite alternate;
+  animation-fill-mode: loop;
+}
+
+@keyframes atomPannelTransition {
+  0% {
     opacity: 0;
-    animation: atomPannelTransition 1000ms ease-in-out infinite alternate;
-    animation-fill-mode: loop;
+    transform: scale(0.95);
   }
-
-  @keyframes atomPannelTransition {
-    0% {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    100% {
-      opacity:.5;
-      transform: scale(1.15);
-    }
+  100% {
+    opacity: 0.5;
+    transform: scale(1.15);
   }
+}
 
+.monitorPannel {
+  width: 500px;
+  height: 330px;
+  border-radius: 25%;
+  background: radial-gradient(
+    circle,
+    rgba($neon-green, 0.5) 0%,
+    rgba($neon-green, 0.3) 30%,
+    rgba($neon-green, 0.1) 50%,
+    transparent 90%
+  );
+  position: absolute;
+  top: 155px;
+  left: 290px;
+  opacity: 0;
+  animation: monitorPannelTransition 50ms ease-in-out infinite alternate;
+  animation-fill-mode: loop;
+  transform: rotate(3deg);
+}
 
-  .monitorPannel{
-    width: 500px;
-    height: 330px;
-    border-radius: 25%;
-    background: radial-gradient(
-        circle,
-        rgba($neon-green, 0.5) 0%,
-        rgba($neon-green, 0.3) 30%,
-        rgba($neon-green, .1) 50%,
-        transparent 90%
-    );
-    position: absolute;
-    top: 155px;
-    left: 290px;
+@keyframes monitorPannelTransition {
+  0% {
     opacity: 0;
-    animation: monitorPannelTransition 50ms ease-in-out infinite alternate;
-    animation-fill-mode: loop;
-    transform: rotate(3deg);
   }
-  
-  
-  @keyframes monitorPannelTransition {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: .5;
-    }
+  100% {
+    opacity: 0.5;
   }
+}
 
-.bottlePannel{
-    width: 110px;
-    height: 110px;
-    background: radial-gradient(
-      circle,
-      rgba($neon-purple, .5) 0%,
-      rgba($neon-purple, 0.2) 40%,
-      rgba($neon-purple, 0.1) 70%,
-      rgba($neon-purple, 0) 100%
-    );
-    position: absolute;
-    bottom: 125px;
-    right: 190px;
-    border-radius: 50%;
+.bottlePannel {
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(
+    circle,
+    rgba($neon-purple, 0.5) 0%,
+    rgba($neon-purple, 0.2) 40%,
+    rgba($neon-purple, 0.1) 70%,
+    rgba($neon-purple, 0) 100%
+  );
+  position: absolute;
+  bottom: 125px;
+  right: 190px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: bottlePannelTransition 1000ms ease-in-out infinite alternate;
+  animation-fill-mode: loop;
+}
+
+@keyframes bottlePannelTransition {
+  0% {
     opacity: 0;
-    animation: bottlePannelTransition 1000ms ease-in-out infinite alternate;
-    animation-fill-mode: loop;
+    transform: scale(0.95);
   }
-
-  @keyframes bottlePannelTransition {
-    0% {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    100% {
-      opacity:.7;
-      transform: scale(1.15);
-    }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.15);
   }
+}

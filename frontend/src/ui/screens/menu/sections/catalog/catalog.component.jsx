@@ -9,7 +9,7 @@ const Catalog = ({ catalog, returnToMenuSelection }) => {
         {
             icon: MainDishesIcon,
             title: "Pratos Principais",
-            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados a vapor e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
+            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados por indução e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
             key: "main-dishes"
         },
         {
@@ -38,31 +38,31 @@ const Catalog = ({ catalog, returnToMenuSelection }) => {
         }
     ];
 
-
-
     return (
         <div className={`${styles.container} ${catalog ? styles.openTransition : styles.closeTransition}`}>
-            <div className={styles.menuList}>
-                {catalogPayload.map(item => {
-                    return (
-                        <button className={styles.menuItem}>
-                            <img className={styles.menuItemIcon} src={item.icon} />
-                            <div className={styles.menuItemText}>
-                                <div className={styles.itemTitle}>
-                                    {item.title}
+            <div className={styles.catalogContainer}>
+                <div className={styles.menuList}>
+                    {catalogPayload.map(item => {
+                        return (
+                            <button className={styles.menuItem}>
+                                <img className={styles.menuItemIcon} src={item.icon} />
+                                <div className={styles.menuItemText}>
+                                    <div className={styles.itemTitle}>
+                                        {item.title}
+                                    </div>
+                                    <div className={styles.itemDescription}>
+                                        {item.description}
+                                    </div>
                                 </div>
-                                <div className={styles.itemDescription}>
-                                    {item.description}
-                                </div>
-                            </div>
-                        </button>
-                    )
-                })}
+                            </button>
+                        )
+                    })}
+                </div>
+                <button className={styles.returnButton} onClick={returnToMenuSelection}>
+                    Voltar
+                    <img className={styles.returnIcon} src={ReturnIcon} />
+                </button>
             </div>
-            <button className={styles.returnButton} onClick={returnToMenuSelection}>
-                Voltar
-                <img className={styles.returnIcon} src={ReturnIcon} />
-            </button>
         </div>
     )
 }

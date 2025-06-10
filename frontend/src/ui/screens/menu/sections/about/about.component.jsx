@@ -1,5 +1,5 @@
 import styles from './about.module.scss'
-import { AboutLogo, ReturnIcon } from 'ui/assets'
+import { ReturnIcon } from 'ui/assets'
 
 const About = ({ about, returnToMenuSelection }) => {
 
@@ -28,7 +28,6 @@ const About = ({ about, returnToMenuSelection }) => {
     return (
         <div className={`${styles.container} ${about ? styles.openTransition : styles.closeTransition}`}>
             <div className={styles.aboutContainer}>
-                <img className={styles.aboutIcon} src={AboutLogo} />
                 <div className={styles.aboutSection}>
                     <div className={styles.aboutText}>
                         {aboutText.trim().split('\n\n').map((paragraph, index) => (
