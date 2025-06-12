@@ -7,35 +7,35 @@ const AdminSelection = ({ adminSelection, goToOpenBilling, goToCloseBilling, goT
     const navigate = useNavigate();
 
     const handleReturnClick = () => {
-        navigate(ROUTE.ADMIN);
+        navigate(ROUTE.HOME);
     }
 
     const menuSelectionPayload = [
         {
             icon: KitchenIcon,
             title: "Cozinha",
-            description: "Cozinha",
+            description: "A fila, os pratos e os dramas culinários em tempo real",
             key: "kitchen",
             click: goToKitchen
         },
         {
             icon: AdminReportsIcon,
             title: "Relatório de Operação",
-            description: "Relatório de Operação",
+            description: "Pedidos, Comandas e os Números por trás do balcão",
             key: "reports",
             click: goToReports
         },
         {
             icon: OpenBillingIcon,
             title: "Abertura de Comanda",
-            description: "Abertura de Comanda",
+            description: "Ninguém entra sem deixar rastro",
             key: "open-billing",
             click: goToOpenBilling
         },
         {
             icon: CloseBillingIcon,
             title: "Fechamento de Comanda",
-            description: "Fechamento de Comanda",
+            description: "Receba os dobrões com elegância",
             key: "close-billing",
             click: goToCloseBilling
         },

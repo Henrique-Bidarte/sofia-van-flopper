@@ -26,9 +26,10 @@
     padding: 20px 0px;  
     
     .adminItem {
-      width: 40%;
+      width: 45%;
       height: 100px;
       margin-bottom: 5px;
+      margin: 0px 25px;
       display: flex;
       align-items: center;
       background: radial-gradient(
@@ -51,7 +52,7 @@
     }
     
     .adminItemText{
-        padding: 10px 25px 10px 10px;
+        padding: 10px;
         color: $white;
         display: flex;
         justify-content: center;
@@ -61,14 +62,14 @@
         .itemTitle{
             display: flex;
             flex-direction: row-reverse;
-            font-size: 22px;
+            font-size: 20px;
             padding-bottom: 4px;
             border-bottom: 1px solid $gray;
             width: 100%;
         }
 
         .itemDescription{
-            font-size: 14px;
+            font-size: 12px;
             padding: 5px 0px;
             direction: ltr;   
             text-align: justify;
@@ -129,8 +130,8 @@
       rgba($neon-purple, 0) 90%
     );
     position: absolute;
-    top: 15px;
-    right: 370px;
+    top: 230px;
+    right: 593px;
     border-radius: 50%;
     opacity: 0;
     animation: atomPannelTransition 2000ms ease-in-out infinite alternate;

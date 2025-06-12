@@ -89,7 +89,6 @@
     }
   }
 
-
  .openTransition{
     animation: openAnimation 400ms linear;
     animation-fill-mode: forwards;
@@ -98,11 +97,11 @@
 
   @keyframes openAnimation {
     0% {
-      transform: translateY(100%);
+      transform: translateX(-100%);
       opacity: 0;
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
       opacity: 1;
     }
   }
@@ -114,11 +113,11 @@
   
   @keyframes closeAnimation {
     0% {
-      transform: translateY(0px);
+      transform: translateX(0px);
       opacity: 1;
     }
     100% {
-      transform: translateY(100%);
+      transform: translateX(-100%);
       opacity: 0;
     }
   }
