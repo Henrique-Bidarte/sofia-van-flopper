@@ -1,5 +1,5 @@
 import styles from "./admin-selection.module.scss"
-import { ReturnIcon, StaffButton } from "ui/assets"
+import { ReturnIcon, AdminReportsIcon, KitchenIcon, OpenBillingIcon, CloseBillingIcon } from "ui/assets"
 import { ROUTE } from "constants";
 import { useNavigate } from "react-router-dom";
 
@@ -12,28 +12,28 @@ const AdminSelection = ({ adminSelection, goToOpenBilling, goToCloseBilling, goT
 
     const menuSelectionPayload = [
         {
-            icon: StaffButton,
+            icon: KitchenIcon,
             title: "Cozinha",
             description: "Cozinha",
             key: "kitchen",
             click: goToKitchen
         },
         {
-            icon: StaffButton,
+            icon: AdminReportsIcon,
             title: "Relatório de Operação",
             description: "Relatório de Operação",
             key: "reports",
             click: goToReports
         },
         {
-            icon: StaffButton,
+            icon: OpenBillingIcon,
             title: "Abertura de Comanda",
             description: "Abertura de Comanda",
             key: "open-billing",
             click: goToOpenBilling
         },
         {
-            icon: StaffButton,
+            icon: CloseBillingIcon,
             title: "Fechamento de Comanda",
             description: "Fechamento de Comanda",
             key: "close-billing",

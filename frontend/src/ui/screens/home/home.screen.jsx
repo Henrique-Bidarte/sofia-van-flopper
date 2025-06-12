@@ -9,7 +9,7 @@ import {
   CONNECTION_NOTIFICATION,
   ROUTE,
 } from "constants";
-import { StaffButton } from "ui/assets";
+import { StaffIcon } from "ui/assets";
 
 const HomeScreen = () => {
   const [customerLoader, setCustomerLoader] = useState(false);
@@ -60,7 +60,7 @@ const HomeScreen = () => {
         </button>
         <div className={`${styles.staffAccess}  ${staffAccess ? styles.openTransition : styles.closeTransition}`}>
           <button className={styles.staffButtonActivation} onClick={handleStaffAccessClick}>
-            <img src={StaffButton} className={styles.staffIcon} />
+            <img src={StaffIcon} className={styles.staffIcon} />
           </button>
           <button
             className={styles.staffButton}

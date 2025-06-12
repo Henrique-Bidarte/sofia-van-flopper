@@ -7,10 +7,13 @@ import SoftDrinksIcon from "./icons/soft-drinks.png"
 import CatalogIcon from "./icons/catalog.png"
 import AboutIcon from "./icons/about.png"
 import BillingIcon from "./icons/billing.png"
-import StaffButton from "./icons/staff-button.png"
+import StaffIcon from "./icons/staff-icon.png"
 import ReturnIcon from "./icons/return-icon.png"
 import JarIcon from "./icons/jar.png"
-import AboutLogo from "./icons/about-logo.png"
+import AdminReportsIcon from "./icons/admin-reports.png"
+import OpenBillingIcon from "./icons/open-billing-icon.png"
+import CloseBillingIcon from "./icons/close-billing-icon.png"
+import KitchenIcon from "./icons/kitchen-icon.png"
 
 export {
     LoaderIcon,
@@ -22,8 +25,11 @@ export {
     CatalogIcon,
     AboutIcon,
     BillingIcon,
-    StaffButton,
+    StaffIcon,
     ReturnIcon,
     JarIcon,
-    AboutLogo
+    AdminReportsIcon,
+    OpenBillingIcon,
+    CloseBillingIcon,
+    KitchenIcon
 };

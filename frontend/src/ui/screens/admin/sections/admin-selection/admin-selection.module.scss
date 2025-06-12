@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   background-image:
-    radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, 1) 100%),
+    radial-gradient(ellipse at center, rgba($black, 0) 50%, rgba($black, .8) 100%),
     url('../../../../assets/background-images/sofia-van-flopper-admin.png');
   background-size: cover;
   background-position: center;
@@ -78,12 +78,14 @@
 
       }
 
-      .adminList > :nth-child(1){
-        flex-direction: row-reverse;
+      .adminList > :nth-child(1), .adminList > :nth-child(2){
+        direction: ltr;   
+
+        .itemDescription{
+          direction: rtl;   
+        }
       }
-      .adminList > :nth-child(2){
-        flex-direction: row-reverse;
-      }
+   
       
   .leaveButton {
       display: flex;

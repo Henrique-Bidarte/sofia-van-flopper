@@ -1,1 +1,5 @@
 export * from './admin-selection/admin-selection.component'
+export * from './open-billing/open-billing.component'
+export * from './close-billing/close-billing.component'
+export * from './kitchen/kitchen.component'
+export * from './reports/reports.component'
