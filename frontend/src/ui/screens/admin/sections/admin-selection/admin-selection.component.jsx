@@ -13,20 +13,6 @@ const AdminSelection = ({ adminSelection, goToOpenBilling, goToCloseBilling, goT
     const menuSelectionPayload = [
         {
             icon: StaffButton,
-            title: "Abertura de Comanda",
-            description: "Abertura de Comanda",
-            key: "open-billing",
-            click: goToOpenBilling
-        },
-        {
-            icon: StaffButton,
-            title: "Fechamento de Comanda",
-            description: "Fechamento de Comanda",
-            key: "close-billing",
-            click: goToCloseBilling
-        },
-        {
-            icon: StaffButton,
             title: "Cozinha",
             description: "Cozinha",
             key: "kitchen",
@@ -39,6 +25,20 @@ const AdminSelection = ({ adminSelection, goToOpenBilling, goToCloseBilling, goT
             key: "reports",
             click: goToReports
         },
+        {
+            icon: StaffButton,
+            title: "Abertura de Comanda",
+            description: "Abertura de Comanda",
+            key: "open-billing",
+            click: goToOpenBilling
+        },
+        {
+            icon: StaffButton,
+            title: "Fechamento de Comanda",
+            description: "Fechamento de Comanda",
+            key: "close-billing",
+            click: goToCloseBilling
+        },
     ]
 
     return (
@@ -49,7 +49,7 @@ const AdminSelection = ({ adminSelection, goToOpenBilling, goToCloseBilling, goT
                     return (
                         <button className={styles.adminItem} onClick={() => item.click()}>
                             <div className={styles.adminItemText}>
-                                <div className={styles.adminTitle}>
+                                <div className={styles.itemTitle}>
                                     {item.title}
                                 </div>
                                 <div className={styles.itemDescription}>
