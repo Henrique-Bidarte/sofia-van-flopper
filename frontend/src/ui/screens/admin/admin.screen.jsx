@@ -1,56 +1,58 @@
 import styles from './admin.module.scss'
-import { useNavigate } from 'react-router-dom';
-import { ROUTE } from 'constants';
-import { ReturnIcon, StaffButton } from 'ui/assets';
-
+import { AdminSelection } from './sections';
+import { useState } from 'react';
 
 const AdminScreen = () => {
-    const navigate = useNavigate();
+    const [adminSelection, setAdminSelection] = useState(true)
+    const [openBilling, setOpenBilling] = useState(false)
+    const [closeBilling, setCloseBilling] = useState(false)
+    const [openKitchen, setOpenKitchen] = useState(false)
+    const [openReports, setOpenReports] = useState(false)
 
-    const handleReturnClick = () => {
-        navigate(ROUTE.HOME);
-    };
-
-    const catalogPayload = [
-        {
-            icon: StaffButton,
-            title: "Abertura de Comanda",
-            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados por indução e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
-            key: "open-billing"
-        },
-        {
-            icon: StaffButton,
-            title: "Fechamento de Comanda",
-            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados por indução e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
-            key: "close-billing"
-        },
-        {
-            icon: StaffButton,
-            title: "Cozinha",
-            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados por indução e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
-            key: "kitchen"
-        },
-        {
-            icon: StaffButton,
-            title: "Relatório de operação",
-            description: "Pratos quentes da casa. Carnes marinadas em ferro fundido, legumes selados por indução e o famoso Estufado da Caldeira nº3. Coma por sua conta e risco. Confira nossas opções!",
-            key: "kitchen"
-        },
-    ];
-
+    const returnToAdminSelection = () => {
+        setAdminSelection(true)
+        setOpenBilling(false)
+        setCloseBilling(false)
+        setOpenKitchen(false)
+        setOpenReports(false)
+    }
+    const goToOpenBilling = () => {
+        setAdminSelection(false)
+        setOpenBilling(true)
+        setCloseBilling(false)
+        setOpenKitchen(false)
+        setOpenReports(false)
+    }
+    const goToCloseBilling = () => {
+        setAdminSelection(false)
+        setOpenBilling(false)
+        setCloseBilling(true)
+        setOpenKitchen(true)
+        setOpenReports(false)
+    }
+    const goToKitchen = () => {
+        setAdminSelection(false)
+        setOpenBilling(false)
+        setCloseBilling(false)
+        setOpenKitchen(false)
+        setOpenReports(true)
+    }
+    const goToReports = () => {
+        setAdminSelection(false)
+        setOpenBilling(false)
+        setCloseBilling(false)
+        setOpenKitchen(false)
+        setOpenReports(true)
+    }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.atomPannel} />
-            <div className={styles.adminContainer}>
-                <div className={styles.adminSection}>
+        <>
+            <div className={styles.container}>
+                <div className={styles.admin}>
+                    <AdminSelection adminSelection={adminSelection} goToOpenBilling={goToOpenBilling} goToCloseBilling={goToCloseBilling} goToKitchen={goToKitchen} goToReports={goToReports} />
                 </div>
-                <button className={styles.returnButton} onClick={handleReturnClick}>
-                    Voltar
-                    <img className={styles.returnIcon} src={ReturnIcon} />
-                </button>
             </div>
-        </div>
+        </>
     )
 }
 
